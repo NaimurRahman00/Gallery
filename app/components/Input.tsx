@@ -5,8 +5,7 @@ export default function Input() {
   return (
     <div className='relative'>
         <input className="w-80 bg-gradient-to-r from-blue-950 to-blue-900 rounded-full px-4 py-2 text-gray-400 capitalize focus:outline-none" type="text" placeholder='SEARCH' />
-        <span className='absolute top-2 right-3 text-gray-300 text-2xl font-bold cursor-pointer'><IoSearchOutline /></span>
-        
+        <span className='absolute top-2 right-3 text-gray-300 text-2xl font-bold cursor-pointer'><IoSearchOutline /></span>  
     </div>
   )
 }
