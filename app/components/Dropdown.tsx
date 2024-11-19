@@ -43,7 +43,7 @@ export default function Dropdown() {
   }, []);
 
   return (
-    <div ref={dropDownRef} className="relative mx-auto text-white">
+    <div ref={dropDownRef} className="relative mx-auto text-white/70">
       <ul className="absolute grid grid-cols-3 grid-rows-10 grid-flow-col w-96 top-6 z-50 space-y-1 rounded-sm bg-gray-800 shadow-md">
         {items.map((item, idx) => (
           <li

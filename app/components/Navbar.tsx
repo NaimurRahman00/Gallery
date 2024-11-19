@@ -10,8 +10,8 @@ export default function Navbar() {
 
   return (
     <nav className="flex items-center justify-between px-2 py-3 mx-auto max-w-[1400px]">
-      <h2 className="text-2xl font-semibold dark:text-white">Gallery</h2>
-      <ul className="flex items-center justify-between gap-4 text-slate-900 dark:text-gray-100 lg:gap-6">
+      <h2 className={`text-2xl text-white uppercase bg-sky-600 px-2 py-1 rounded-md font-black`} >Gallery</h2>
+      <ul className="flex items-center justify-between gap-4 text-white/70 font-medium dark:text-gray-100 lg:gap-6">
         <li className="hover:underline">
           <Input />
         </li>
