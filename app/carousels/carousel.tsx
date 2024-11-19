@@ -40,6 +40,8 @@ export const Carousel = () => {
           />
         ))}
       </div>
+      <div className="absolute top-0 right-0 left-0 bottom-0 bg-gradient-to-tr from-black/90 via-black/0 to-black/90"></div>
+      <div className="absolute top-0 right-0 left-0 bottom-0 bg-gradient-to-tl from-black/90 via-black/0 to-black/90"></div>
     </div>
   )
 };
