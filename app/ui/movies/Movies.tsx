@@ -28,39 +28,53 @@ interface Movie {
 
 type SortOrder = 'default' | 'lowToHigh' | 'highToLow';
 
-function Movies() {
+function Movies({ searchQuery }: { searchQuery: string }) { // **Added searchQuery Prop**
     const initialMovies: Movie[] = [
         { name: 'Joker: Folie a Deux', poster: joker, price: 3 },
         { name: 'The Wild Robot', poster: wild, price: 4 },
-        { name: 'Deadpool & Woolverine', poster: deadpool, price: 8 },
+        { name: 'Deadpool & Wolverine', poster: deadpool, price: 8 },
         { name: 'Bad Boys: Ride or Die', poster: badBoys, price: 6 },
         { name: 'Hitman', poster: hitman, price: 4 },
         { name: 'Longlegs', poster: longlegs, price: 2 },
         { name: 'The Wolfman', poster: wolfman, price: 3 },
         { name: 'Irish Wish', poster: irish, price: 5 },
-        { name: 'Sweet home: Season 2', poster: switHome, price: 6 },
-        { name: 'Lokie: Season 2', poster: lokie, price: 8 },
-        { name: 'The Dragon Prince: season 6', poster: dragon, price: 7 },
-        { name: 'Harry potter and the prizoner of azkaban', poster: azkaban, price: 9 },
+        { name: 'Sweet Home: Season 2', poster: switHome, price: 6 },
+        { name: 'Loki: Season 2', poster: lokie, price: 8 },
+        { name: 'The Dragon Prince: Season 6', poster: dragon, price: 7 },
+        { name: 'Harry Potter and the Prisoner of Azkaban', poster: azkaban, price: 9 },
         { name: 'Spider-Man 3', poster: spiderman, price: 8 },
-        { name: 'Doctor Strange in the multiverse of madness', poster: strange, price: 9 },
+        { name: 'Doctor Strange in the Multiverse of Madness', poster: strange, price: 9 },
         { name: 'Interstellar', poster: inter, price: 7 },
         { name: 'Maleficent', poster: maleficent, price: 4 },
     ];
 
     const [movies, setMovies] = useState<Movie[]>(initialMovies);
+    const [filteredMovies, setFilteredMovies] = useState<Movie[]>(initialMovies); // **For filtered movies**
     const [sortOrder, setSortOrder] = useState<SortOrder>('default');
+    const [loading, setLoading] = useState(false); // **Spinner State**
 
-    // Effect to sort movies whenever sortOrder changes
     useEffect(() => {
-        const sortedMovies = [...initialMovies];
+        const sortedMovies = [...movies];
         if (sortOrder === 'lowToHigh') {
             sortedMovies.sort((a, b) => a.price - b.price);
         } else if (sortOrder === 'highToLow') {
             sortedMovies.sort((a, b) => b.price - a.price);
         }
-        setMovies(sortedMovies);
-    }, [sortOrder]);
+        setFilteredMovies(sortedMovies);
+    }, [sortOrder, movies]);
+
+    // **Search Effect**
+    useEffect(() => {
+        setLoading(true);
+        const timeout = setTimeout(() => {
+            const result = movies.filter((movie) =>
+                movie.name.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+            setFilteredMovies(result);
+            setLoading(false);
+        }, 500); // **Delay for spinner**
+        return () => clearTimeout(timeout); // Cleanup
+    }, [searchQuery]);
 
     const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSortOrder(e.target.value as SortOrder);
@@ -72,7 +86,10 @@ function Movies() {
                 <h1 className="font-bold text-sky-400 text-2xl">Movies</h1>
                 {/* Sorting Dropdown */}
                 <div className="py-2">
-                    <label htmlFor="sort" className="mr-2 font-semibold text-gray-300 dark:text-gray-300">
+                    <label
+                        htmlFor="sort"
+                        className="mr-2 font-semibold text-gray-300 dark:text-gray-300"
+                    >
                         Sort by Price:
                     </label>
                     <select
@@ -88,14 +105,20 @@ function Movies() {
                 </div>
             </div>
             <div className="grid grid-cols-8 gap-5 pb-10">
-                {movies.map((movie, idx) => (
-                    <Card
-                        key={idx}
-                        name={movie.name}
-                        poster={movie.poster}
-                        price={movie.price}
-                    />
-                ))}
+                {loading ? (
+                    <div className="col-span-8 text-center text-xl text-white mx-auto pb-10">
+                        <div className="w-10 h-10 animate-[spin_1s_linear_infinite] rounded-full border-4 border-r-transparent border-l-transparent border-sky-400"></div>
+                    </div>
+                ) : (
+                    filteredMovies.map((movie, idx) => (
+                        <Card
+                            key={idx}
+                            name={movie.name}
+                            poster={movie.poster}
+                            price={movie.price}
+                        />
+                    ))
+                )}
             </div>
         </div>
     );
