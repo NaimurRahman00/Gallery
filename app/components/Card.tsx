@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
+import { FaPlay } from 'react-icons/fa';
 
 interface CardProps {
   name: string;
@@ -11,7 +12,7 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ name, poster, price }) => {
   return (
-    <div className="w-full max-w-[160px] space-y-3 rounded-md bg-white shadow-lg dark:bg-[#18181B] overflow-hidden">
+    <div className="w-full max-w-[160px] space-y-3 rounded-md bg-white shadow-lg dark:bg-[#18181B] overflow-hidden group">
       <div className="relative flex h-48 w-full justify-center lg:h-[260px]">
         {/* Price Tag */}
         <div className="absolute left-4 right-4 top-4 flex justify-between">
@@ -36,7 +37,15 @@ export const Card: React.FC<CardProps> = ({ name, poster, price }) => {
           className="min-w-full bg-black/20 object-cover"
           alt={name}
         />
+
+        {/* Hover Content */}
+        <div className="absolute inset-0 flex items-center justify-center bg-black/70 text-white text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className='bg-sky-400 p-4 rounded-full'>
+            <FaPlay />
+          </div>
+        </div>
       </div>
     </div>
+
   );
 };

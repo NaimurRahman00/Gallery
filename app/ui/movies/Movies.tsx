@@ -18,11 +18,12 @@ import strange from '@/public/doctor-strange-in-the-multiverse-of-madness.jpg';
 import inter from '@/public/interstellar.webp';
 import maleficent from '@/public/maleficent.webp';
 import dragon from '@/public/the-dragon-prince-season-6.webp';
+import { StaticImageData } from 'next/image';
 
 
 interface Movie {
     name: string;
-    poster: string; // Adjust this type if necessary (e.g., StaticImageData)
+    poster: StaticImageData;
     price: number;
 }
 
@@ -51,7 +52,7 @@ function Movies({ searchQuery }: { searchQuery: string }) { // **Added searchQue
     const [movies, setMovies] = useState<Movie[]>(initialMovies);
     const [filteredMovies, setFilteredMovies] = useState<Movie[]>(initialMovies); // **For filtered movies**
     const [sortOrder, setSortOrder] = useState<SortOrder>('default');
-    const [loading, setLoading] = useState(false); // **Spinner State**
+    const [loading, setLoading] = useState(false); 
 
     useEffect(() => {
         const sortedMovies = [...movies];
@@ -74,7 +75,7 @@ function Movies({ searchQuery }: { searchQuery: string }) { // **Added searchQue
             setLoading(false);
         }, 500); // **Delay for spinner**
         return () => clearTimeout(timeout); // Cleanup
-    }, [searchQuery]);
+    }, [movies, searchQuery]);
 
     const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSortOrder(e.target.value as SortOrder);
