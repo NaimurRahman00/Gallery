@@ -2,26 +2,21 @@ import React from 'react'
 
 function Footer() {
     return (
-        <footer className="bg-white dark:bg-gray-900">
+        <footer className="bg-[#15161b] dark:bg-gray-900 text-white/65">
             <div className="container p-6 mx-auto">
                 <div className="lg:flex">
                     <div className="w-full -mx-6 lg:w-2/5">
                         <div className="px-6">
                             <a href="#">
-                                <img
-                                    className="w-auto h-7"
-                                    src="https://merakiui.com/images/full-logo.svg"
-                                    alt=""
-                                />
+                                <h2 className={`text-2xl w-fit text-white uppercase bg-sky-600 px-2 py-1 rounded-md font-black`} >Gallery</h2>
                             </a>
-                            <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
-                                Join 31,000+ other and never miss out on new tips, tutorials, and
-                                more.
+                            <p className="max-w-sm mt-2">
+                                GALLERY - Free movies online, here you can watch movies online in high quality for free without annoying of advertising, just come and enjoy your movies online.
                             </p>
                             <div className="flex mt-6 -mx-2">
                                 <a
                                     href="#"
-                                    className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                                    className="mx-2 transition-colors duration-300 hover:text-blue-500 dark:hover:text-sky-500"
                                     aria-label="Reddit"
                                 >
                                     <svg
@@ -35,7 +30,7 @@ function Footer() {
                                 </a>
                                 <a
                                     href="#"
-                                    className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                                    className="mx-2 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-sky-500"
                                     aria-label="Facebook"
                                 >
                                     <svg
@@ -49,7 +44,7 @@ function Footer() {
                                 </a>
                                 <a
                                     href="#"
-                                    className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                                    className="mx-2 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-sky-500"
                                     aria-label="Github"
                                 >
                                     <svg
@@ -66,89 +61,88 @@ function Footer() {
                     </div>
                     <div className="mt-6 lg:mt-0 lg:flex-1">
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                            <div>
-                                <h3 className="text-gray-700 uppercase dark:text-white">About</h3>
+                            <div className='text-sky-500'>
+                                <h3 className="uppercase text-white">Movies</h3>
                                 <a
                                     href="#"
-                                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                                    className="block mt-2 text-sm dark:text-gray-400 hover:underline"
                                 >
-                                    Company
+                                    Drama
                                 </a>
                                 <a
                                     href="#"
-                                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                                    className="block mt-2 text-sm dark:text-gray-400 hover:underline"
                                 >
-                                    community
+                                    Fantasy
                                 </a>
                                 <a
                                     href="#"
-                                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                                    className="block mt-2 text-sm dark:text-gray-400 hover:underline"
                                 >
-                                    Careers
-                                </a>
-                            </div>
-                            <div>
-                                <h3 className="text-gray-700 uppercase dark:text-white">Blog</h3>
-                                <a
-                                    href="#"
-                                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
-                                >
-                                    Tec
-                                </a>
-                                <a
-                                    href="#"
-                                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
-                                >
-                                    Music
-                                </a>
-                                <a
-                                    href="#"
-                                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
-                                >
-                                    Videos
+                                    Action
                                 </a>
                             </div>
-                            <div>
-                                <h3 className="text-gray-700 uppercase dark:text-white">
-                                    Products
+                            <div className='text-sky-500'>
+                                <h3 className="uppercase text-white">Country</h3>
+                                <a
+                                    href="#"
+                                    className="block mt-2 text-sm dark:text-gray-400 hover:underline"
+                                >
+                                    Bangladesh
+                                </a>
+                                <a
+                                    href="#"
+                                    className="block mt-2 text-sm dark:text-gray-400 hover:underline"
+                                >
+                                    Australia
+                                </a>
+                                <a
+                                    href="#"
+                                    className="block mt-2 text-sm dark:text-gray-400 hover:underline"
+                                >
+                                    UK
+                                </a>
+                            </div>
+                            <div className='text-sky-500'>
+                                <h3 className="uppercase text-white">
+                                    Free Movies
                                 </h3>
                                 <a
                                     href="#"
-                                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                                    className="block mt-2 text-sm dark:text-gray-400 hover:underline"
                                 >
-                                    Mega cloud
+                                    Movies
                                 </a>
                                 <a
                                     href="#"
-                                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                                    className="block mt-2 text-sm dark:text-gray-400 hover:underline"
                                 >
-                                    Aperion UI
+                                    Series
                                 </a>
                                 <a
                                     href="#"
-                                    className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                                    className="block mt-2 text-sm dark:text-gray-400 hover:underline"
                                 >
-                                    Meraki UI
+                                    Top IMDB
                                 </a>
                             </div>
-                            <div>
-                                <h3 className="text-gray-700 uppercase dark:text-white">Contact</h3>
-                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
-                                    +1 526 654 8965
+                            <div className='text-sky-400'>
+                                <h3 className="uppercase text-white">Help</h3>
+                                <span className="block mt-2 text-sm dark:text-gray-400 hover:underline">
+                                    FAQ
                                 </span>
-                                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
-                                    example@email.com
+                                <span className="block mt-2 text-sm dark:text-gray-400 hover:underline">
+                                    DMCA
                                 </span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <hr className="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
-                <div>
-                    <p className="text-center text-gray-500 dark:text-gray-400">
-                        © Brand 2020 - All rights reserved
-                    </p>
-                </div>
+            </div>
+            <div className='bg-[#0e0e12]'>
+                <p className="text-center py-4">
+                    ©Naimur - All rights reserved
+                </p>
             </div>
         </footer>
     )

@@ -1,5 +1,6 @@
 
 import { Carousel } from "./carousels/Carousel";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Movies from "./ui/movies/Movies";
 
@@ -10,6 +11,7 @@ export default function Home() {
         <Navbar />
         <Carousel/>
         <Movies/>
+        <Footer/>
       </div>
     </div>
   );
