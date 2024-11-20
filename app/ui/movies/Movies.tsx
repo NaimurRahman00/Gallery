@@ -20,7 +20,6 @@ import inter from '@/public/interstellar.webp';
 import maleficent from '@/public/maleficent.webp';
 import dragon from '@/public/the-dragon-prince-season-6.webp';
 
-
 interface Movie {
     name: string;
     poster: StaticImageData;
@@ -29,7 +28,7 @@ interface Movie {
 
 type SortOrder = 'default' | 'lowToHigh' | 'highToLow';
 
-function Movies({ searchQuery }: { searchQuery: string }) { // **Added searchQuery Prop**
+function Movies({ searchQuery }: { searchQuery: string }) {
     const initialMovies: Movie[] = [
         { name: 'Joker: Folie a Deux', poster: joker, price: 3 },
         { name: 'The Wild Robot', poster: wild, price: 4 },
@@ -49,33 +48,33 @@ function Movies({ searchQuery }: { searchQuery: string }) { // **Added searchQue
         { name: 'Maleficent', poster: maleficent, price: 4 },
     ];
 
-    const movies = initialMovies;
-    const [filteredMovies, setFilteredMovies] = useState<Movie[]>(initialMovies); // **For filtered movies**
+    const [filteredMovies, setFilteredMovies] = useState<Movie[]>(initialMovies);
     const [sortOrder, setSortOrder] = useState<SortOrder>('default');
-    const [loading, setLoading] = useState(false); 
+    const [loading, setLoading] = useState(false);
 
+    // Sort Movies effect
     useEffect(() => {
-        const sortedMovies = [...movies];
+        const sortedMovies = [...initialMovies]; // Use initialMovies directly
         if (sortOrder === 'lowToHigh') {
             sortedMovies.sort((a, b) => a.price - b.price);
         } else if (sortOrder === 'highToLow') {
             sortedMovies.sort((a, b) => b.price - a.price);
         }
         setFilteredMovies(sortedMovies);
-    }, [sortOrder, movies]);
+    }, [sortOrder]);
 
-    // **Search Effect**
+    // Search Movies effect
     useEffect(() => {
         setLoading(true);
         const timeout = setTimeout(() => {
-            const result = movies.filter((movie) =>
+            const result = initialMovies.filter((movie) =>
                 movie.name.toLowerCase().includes(searchQuery.toLowerCase())
             );
             setFilteredMovies(result);
             setLoading(false);
-        }, 500); // **Delay for spinner**
+        }, 500); // Delay for spinner
         return () => clearTimeout(timeout); // Cleanup
-    }, [movies, searchQuery]);
+    }, [searchQuery]); // Removed movies from dependencies
 
     const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSortOrder(e.target.value as SortOrder);
