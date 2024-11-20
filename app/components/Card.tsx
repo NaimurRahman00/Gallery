@@ -11,7 +11,7 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ name, poster, price }) => {
   return (
-    <div className="w-full max-w-[160px] space-y-3 rounded-md bg-white m-4 shadow-lg dark:bg-[#18181B] overflow-hidden">
+    <div className="w-full max-w-[160px] space-y-3 rounded-md bg-white shadow-lg dark:bg-[#18181B] overflow-hidden">
       <div className="relative flex h-48 w-full justify-center lg:h-[260px]">
         {/* Price Tag */}
         <div className="absolute left-4 right-4 top-4 flex justify-between">
@@ -24,7 +24,7 @@ export const Card: React.FC<CardProps> = ({ name, poster, price }) => {
         </div>
 
         {/* Movie Title */}
-        <div className="absolute left-4 right-4 top-4 bottom-2 flex flex-col justify-end text-white font-bold leading-4 text-center">
+        <div className="absolute left-2 right-2 top-2 bottom-2 flex flex-col justify-end text-white font-bold leading-4 text-center">
           <h1 className="bg-gradient-to-t from-black/70 to-black/0 pt-4">
             {name}
           </h1>
@@ -35,8 +35,6 @@ export const Card: React.FC<CardProps> = ({ name, poster, price }) => {
           src={poster}
           className="min-w-full bg-black/20 object-cover"
           alt={name}
-          width={160}
-          height={260} 
         />
       </div>
     </div>

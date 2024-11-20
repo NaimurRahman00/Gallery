@@ -53,7 +53,7 @@ function Movies() {
 
     // Effect to sort movies whenever sortOrder changes
     useEffect(() => {
-        let sortedMovies = [...initialMovies];
+        const sortedMovies = [...initialMovies];
         if (sortOrder === 'lowToHigh') {
             sortedMovies.sort((a, b) => a.price - b.price);
         } else if (sortOrder === 'highToLow') {
@@ -67,11 +67,11 @@ function Movies() {
     };
 
     return (
-        <div className="w-10/12 mx-auto">
-            <div className="flex flex-col md:flex-row md:items-center justify-between mt-3">
-                <h1 className="px-4 font-bold text-sky-400 text-2xl">Movies</h1>
+        <div className="w-[85%] mx-auto">
+            <div className="flex flex-col md:flex-row md:items-center justify-between my-3">
+                <h1 className="font-bold text-sky-400 text-2xl">Movies</h1>
                 {/* Sorting Dropdown */}
-                <div className="px-4 py-2">
+                <div className="py-2">
                     <label htmlFor="sort" className="mr-2 font-semibold text-gray-300 dark:text-gray-300">
                         Sort by Price:
                     </label>
@@ -87,7 +87,7 @@ function Movies() {
                     </select>
                 </div>
             </div>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="grid grid-cols-8 gap-5">
                 {movies.map((movie, idx) => (
                     <Card
                         key={idx}
