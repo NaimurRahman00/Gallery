@@ -1,21 +1,20 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import { FaPlay } from 'react-icons/fa';
-import Link from 'next/link';
 
 interface CardProps {
   name: string;
-  poster: string;
+  poster: StaticImageData;
   price: number;
 }
 
 export const Card: React.FC<CardProps> = ({ name, poster, price }) => {
-  const movieDetailsUrl = `/movie/${name.toLowerCase().replace(/\s+/g, '-')}`;
+  // const movieDetailsUrl = `/movie/${name.toLowerCase().replace(/\s+/g, '-')}`;
 
   return (
-    <Link href={movieDetailsUrl}>
+    <div>
       <div className="w-full max-w-[160px] space-y-3 rounded-md bg-white shadow-lg dark:bg-[#18181B] overflow-hidden group">
         <div className="relative flex h-48 w-full justify-center lg:h-[260px]">
           {/* Price Tag */}
@@ -50,6 +49,6 @@ export const Card: React.FC<CardProps> = ({ name, poster, price }) => {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
