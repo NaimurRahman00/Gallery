@@ -49,7 +49,7 @@ function Movies({ searchQuery }: { searchQuery: string }) { // **Added searchQue
         { name: 'Maleficent', poster: maleficent, price: 4 },
     ];
 
-    const [movies, setMovies] = useState<Movie[]>(initialMovies);
+    const movies = initialMovies;
     const [filteredMovies, setFilteredMovies] = useState<Movie[]>(initialMovies); // **For filtered movies**
     const [sortOrder, setSortOrder] = useState<SortOrder>('default');
     const [loading, setLoading] = useState(false); 
