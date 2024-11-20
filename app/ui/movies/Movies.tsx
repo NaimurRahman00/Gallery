@@ -87,7 +87,7 @@ function Movies() {
                     </select>
                 </div>
             </div>
-            <div className="grid grid-cols-8 gap-5">
+            <div className="grid grid-cols-8 gap-5 pb-10">
                 {movies.map((movie, idx) => (
                     <Card
                         key={idx}

@@ -5,15 +5,19 @@ import Input from './Input';
 import FadeUpDropDown from './Dropdown';
 import { useState } from 'react';
 
-export default function Navbar() {
+interface NavbarProps {
+  onSearch: (query: string) => void; 
+}
+
+export default function Navbar({ onSearch }: NavbarProps) { 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <nav className="flex items-center justify-between px-2 py-3 mx-auto max-w-[1400px]">
-      <h2 className={`text-2xl text-white uppercase bg-sky-600 px-2 py-1 rounded-md font-black`} >Gallery</h2>
+      <h2 className="text-2xl text-white uppercase bg-sky-600 px-2 py-1 rounded-md font-black">Gallery</h2>
       <ul className="flex items-center justify-between gap-4 text-white/70 font-medium dark:text-gray-100 lg:gap-6">
         <li className="hover:underline">
-          <Input />
+          <Input onSearch={onSearch} /> 
         </li>
         <li className="hover:underline">
           <Link href="#">Home</Link>
