@@ -2,6 +2,7 @@
 
 import { Card } from '@/app/components/Card';
 import React, { useState, useEffect } from 'react';
+import { StaticImageData } from 'next/image';
 import joker from '@/public/joker.jpg';
 import wild from '@/public/the-wild-robot.jpg';
 import deadpool from '@/public/deadpool-wolverine.jpg';
@@ -18,7 +19,6 @@ import strange from '@/public/doctor-strange-in-the-multiverse-of-madness.jpg';
 import inter from '@/public/interstellar.webp';
 import maleficent from '@/public/maleficent.webp';
 import dragon from '@/public/the-dragon-prince-season-6.webp';
-import { StaticImageData } from 'next/image';
 
 
 interface Movie {
