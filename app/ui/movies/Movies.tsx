@@ -12,7 +12,13 @@ import wolfman from '@/public/the-wolfman.webp';
 import irish from '@/public/irish-wish.webp';
 import switHome from '@/public/sweet-home-season-2.webp';
 import lokie from '@/public/loki-season-2.webp';
+import azkaban from '@/public/harry-potter-and-the-prisoner-of-azkaban.webp';
+import spiderman from '@/public/spider-man-3.jpg';
+import strange from '@/public/doctor-strange-in-the-multiverse-of-madness.jpg';
+import inter from '@/public/interstellar.webp';
+import maleficent from '@/public/maleficent.webp';
 import dragon from '@/public/the-dragon-prince-season-6.webp';
+
 
 interface Movie {
     name: string;
@@ -35,6 +41,11 @@ function Movies() {
         { name: 'Sweet home: Season 2', poster: switHome, price: 6 },
         { name: 'Lokie: Season 2', poster: lokie, price: 8 },
         { name: 'The Dragon Prince: season 6', poster: dragon, price: 7 },
+        { name: 'Harry potter and the prizoner of azkaban', poster: azkaban, price: 9 },
+        { name: 'Spider-Man 3', poster: spiderman, price: 8 },
+        { name: 'Doctor Strange in the multiverse of madness', poster: strange, price: 9 },
+        { name: 'Interstellar', poster: inter, price: 7 },
+        { name: 'Maleficent', poster: maleficent, price: 4 },
     ];
 
     const [movies, setMovies] = useState<Movie[]>(initialMovies);
