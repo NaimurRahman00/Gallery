@@ -23,7 +23,7 @@ export default function Navbar({ onSearch }: NavbarProps) {
           <Link href="#">Home</Link>
         </li>
         <li
-          className="relative hover:underline"
+          className="relative hover:underline hidden sm:inline-block"
           onClick={() => setIsDropdownOpen((prev) => !prev)}
         >
           <button className="px-4 py-2 rounded-md focus:bg-sky-600 focus:text-white">
@@ -31,13 +31,13 @@ export default function Navbar({ onSearch }: NavbarProps) {
           </button>
           {isDropdownOpen && <FadeUpDropDown />}
         </li>
-        <li className="hover:underline">
+        <li className="hover:underline hidden sm:inline-block">
           <Link href="#">Country</Link>
         </li>
-        <li className="hover:underline">
+        <li className="hover:underline hidden sm:inline-block">
           <Link href="#">Movies</Link>
         </li>
-        <li className="hover:underline">
+        <li className="hover:underline hidden sm:inline-block">
           <Link href="#">TV-Series</Link>
         </li>
       </ul>
