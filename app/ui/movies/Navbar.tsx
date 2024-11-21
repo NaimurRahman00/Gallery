@@ -1,8 +1,8 @@
 'use client'
 
 import Link from 'next/link';
-import Input from './Input';
-import FadeUpDropDown from './Dropdown';
+import Input from '../../components/Input';
+import FadeUpDropDown from '../../components/Dropdown';
 import { useState } from 'react';
 
 interface NavbarProps {
@@ -16,7 +16,7 @@ export default function Navbar({ onSearch }: NavbarProps) {
     <nav className="flex items-center justify-between px-2 py-3 mx-auto max-w-[1400px]">
       <h2 className="text-2xl text-white uppercase bg-sky-600 px-2 py-1 rounded-md font-black">Gallery</h2>
       <ul className="flex items-center justify-between gap-4 text-white/70 font-medium dark:text-gray-100 lg:gap-6">
-        <li className="hover:underline">
+        <li className="hover:underline hidden sm:inline-block">
           <Input onSearch={onSearch} /> 
         </li>
         <li className="hover:underline">

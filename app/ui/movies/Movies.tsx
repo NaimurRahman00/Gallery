@@ -81,7 +81,7 @@ function Movies({ searchQuery }: { searchQuery: string }) {
     };
 
     return (
-        <div className="w-[85%] mx-auto">
+        <div className="w-[85%] max-w-[1400px] mx-auto">
             <div className="flex flex-col md:flex-row md:items-center justify-between my-3">
                 <h1 className="font-bold text-sky-400 text-2xl">Movies</h1>
                 {/* Sorting Dropdown */}
@@ -104,9 +104,9 @@ function Movies({ searchQuery }: { searchQuery: string }) {
                     </select>
                 </div>
             </div>
-            <div className="grid grid-cols-8 gap-5 pb-10">
+            <div className="grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-5 pb-10">
                 {loading ? (
-                    <div className="col-span-8 text-center text-xl text-white mx-auto pb-10">
+                    <div className="text-center text-xl text-white mx-auto pb-10">
                         <div className="w-10 h-10 animate-[spin_1s_linear_infinite] rounded-full border-4 border-r-transparent border-l-transparent border-sky-400"></div>
                     </div>
                 ) : (

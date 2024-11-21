@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Carousel } from "./carousels/Carousel";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Footer from "./ui/movies/Footer";
+import Navbar from "./ui/movies/Navbar";
 import Movies from "./ui/movies/Movies";
 
 export default function Home() {

@@ -54,7 +54,7 @@ export const Carousel = () => {
             />
             <div className="absolute top-0 left-0 right-0 bottom-0 z-50 flex flex-col justify-between py-10">
               <div></div>
-              <div className="w-[85%] mx-auto z-10">
+              <div className="w-[85%] mx-auto z-10 max-w-[1400px]">
                 <h1 className="text-white font-bold text-3xl">{slide.name}</h1>
                 <div className="my-2 flex justify-start items-center gap-5 text-white">
                   <span className="rounded shadow-2xl shadow-black bg-[#ffc107] px-2 py-0.5 h-fit font-bold text-xs text-black">
