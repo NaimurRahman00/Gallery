@@ -55,7 +55,7 @@ export const Carousel = () => {
             <div className="absolute top-0 left-0 right-0 bottom-0 z-50 flex flex-col justify-between py-10">
               <div></div>
               <div className="w-[85%] mx-auto z-10 max-w-[1400px]">
-                <h1 className="text-white font-bold text-3xl">{slide.name}</h1>
+                <h1 className="text-white font-bold text-lg sm:text-3xl">{slide.name}</h1>
                 <div className="my-2 flex justify-start items-center gap-5 text-white">
                   <span className="rounded shadow-2xl shadow-black bg-[#ffc107] px-2 py-0.5 h-fit font-bold text-xs text-black">
                     HD
@@ -63,8 +63,8 @@ export const Carousel = () => {
                   <span>{slide.duration}</span>
                   <span>{slide.genre}</span>
                 </div>
-                <p className="text-white w-1/2 my-4">{slide.discription}</p>
-                <button className="px-2 py-1 rounded bg-sky-600 text-black text-base cursor-pointer">
+                <p className="text-white w-1/2 sm:my-4 hidden sm:block">{slide.discription}</p>
+                <button className="px-2 sm:py-1 rounded bg-sky-600 text-black text-base cursor-pointer hidden sm:block">
                   Watch now
                 </button>
               </div>
